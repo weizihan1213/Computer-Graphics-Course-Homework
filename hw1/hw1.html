@@ -1,0 +1,82 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS 45500 - Homework 1</title>
+  <meta name="description" content="CS 45500 homework 1">
+  <meta name="author" content="Roger L. Kraft">
+  <link rel="stylesheet" href="http://math.pnw.edu/~rlkraft/roger-v2.css">
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+<!--
+<header>
+  <a href="http://math.pnw.edu/~rlkraft/" title="Roger L. Kraft">Roger L. Kraft</a>
+</header>
+ -->
+<nav>
+  <ul class="nav-list" role="navigation">
+    <li><a href="../cs45500.html">CS 45500</a></li>
+    <li><a href="../syllabus.html">Syllabus</a></li>
+    <li><a href="../class.html">Lectures and Readings</a></li>
+    <li><a href="../homework.html">Homework Assignments</a></li>
+  </ul>
+  <ul class="nav-list" role="navigation">
+    <li><a href="http://math.pnw.edu/~rlkraft/roger.html">Roger Kraft</a></li>
+    <li><a href="http://academics.pnw.edu/math-stats-computer-science/">Math & CS Department</a></li>
+    <li><a href="http://academics.pnw.edu/engineering-sciences">College of Engineering & Sciences</a></li>
+    <li><a href="http://www.pnw.edu/">Purdue University Northwest</a></li>
+  </ul>
+</nav>
+
+<section id="Content">
+<h1>
+Programming Assignment 1<br>
+CS 45500<br>
+Computer Graphics<br>
+Fall, 2019
+</h1>
+
+<p>
+This assignment makes use of the files contained in this <a href="hw1.zip">zip file</a>.
+This assignment is due Tuesday, September 3.
+</p>
+
+<p>
+This assignment and your next assignment are about the data structures used at the two ends of the 3D graphics rendering pipeline; what goes into the beginning of the pipeline and what comes out of the end of the pipeline. Roughly, what goes into the pipeline is the <code>Scene</code> data structure which describes the geometry of what the renderer should draw. What comes out of the pipeline is the <code>FrameBuffer</code> data structure which holds the image of the scene drawn by the renderer. This assignment is  about what comes out of the graphics pipeline, the <code>FrameBuffer</code> data structure. Assignment 2 will be about what goes into the rendering pipeline, the <code>Scene</code> data structure.
+</p>
+
+<p>
+A <code>FrameBuffer</code> object holds an array of pixel data that represents an image that can be displayed on a computer's screen. For each pixel in the image, the FrameBuffer's array holds three byte values, one byte that represents the red component of the pixel's color, one byte that represents the green component, and one byte that represents the blue component of the pixel's color. Each of these three bytes is only eight bits in size, so each of the three colors has only 256 shades (but there are 256^3 = 16,777,216 distinct colors). If a framebuffer has dimensions <code>n</code> rows of pixels by <code>m</code> columns of pixels, then the framebuffer's array holds <code>n*m</code> integers and each integer holds the three bytes for one pixel (with one unused byte in each integer). The pixel data is NOT stored as a "two-dimensional" (or "three-dimensional") array. It is stored as a one-dimensional array of length <code>n*m</code>. This array is in "row major" form, meaning that the first <code>m</code> integers in the array are the pixels from the image's first row. The next <code>m</code> integers are the pixels from the images second row, etc. Finally, the first row of the pixels is the top row of the image as its displayed on the computer's screen.
+</p>
+
+<p>
+In this assignment you are to write a program that creates a <code>FrameBuffer</code> object and then fills it with pixel data so that the resulting image looks like the file <code>Hw_1_demo.ppm</code> from the zip file. In the zip file there is a file <code>Hw_1.java</code> that you need to complete. In <code>Hw_1.java</code> there is a brief outline of what you need to do. You should make as much use of the <code>FrameBuffer</code> interface as possible when you write your code. To learn about the <code>FrameBuffer</code> class's interface, look at its source code in the <code>framebuffer</code> sub folder of the zip file (you can also look at the Javadoc html file for the <code>FrameBuffer</code> class). Your program should produce a result that looks exactly like <code>Hw_1_demo.ppm</code>. There are a number of facts about the image in <code>Hw_1_demo.ppm</code> that you need to find out (like, what are the exact colors?). Use tools from <a href="http://math.pnw.edu/~rlkraft/cs45500/pixel-utilities.zip">pixel-utilities.zip</a> to determine these details about <code>Hw_1_demo.ppm</code>.
+</p>
+
+<p>
+<a href="http://math.pnw.edu/~rlkraft/cs45500/handin.html">Turn in</a> a zip file called <code>CS455Hw1Surname.zip</code> (where <code>Surname</code> is your last name) containing your version of <code>Hw_1.java</code>.
+</p>
+
+<p>
+This assignment is due Tuesday, September 3.
+</p>
+
+</section>
+
+<footer>
+  <script language="JavaScript" type="text/javascript">
+      document.write("<font size=\"-2\"><i>Last modified on " + document.lastModified + ".<\/i><\/font>");
+  </script>
+  <br>
+  <a href="mailto:rlkraft@pnw.edu"><font size="-2"><i>compliments and criticisms</i></font></a>
+</footer>
+
+</body>
+</html>
